@@ -42,7 +42,7 @@ public class WeChatHelper {
      * @param secret      微信appId 秘钥
      * @return WeChatUser
      */
-    public static WeChatUser getUserInfo(String code, String weChatAppId, String secret) {
+    public WeChatUser getUserInfo(String code, String weChatAppId, String secret) {
         String url = buildGetTokenUrl(code, weChatAppId, secret);
         String tokenJson = HttpClientUtil.httpClientGet(url,null,"utf-8");
         if (!checkWeChatResult(tokenJson)) {
@@ -76,7 +76,7 @@ public class WeChatHelper {
      * @param resultJson 返回值
      * @return 是否合法
      */
-    public static Boolean checkWeChatResult(String resultJson) {
+    private Boolean checkWeChatResult(String resultJson) {
         return Optional.ofNullable(Json.toMap(resultJson)).orElse(new HashMap(16)).containsKey("openid");
     }
 
@@ -88,7 +88,7 @@ public class WeChatHelper {
      * @param secret      微信公共号秘钥
      * @return URL
      */
-    public static String buildGetTokenUrl(String code, String weChatAppId, String secret) {
+    private String buildGetTokenUrl(String code, String weChatAppId, String secret) {
         return String.format("%s?appid=%s&secret=%s&grant_type=%s&code=%s", getTokenUrl, weChatAppId, secret, grantType, code);
     }
 
@@ -99,7 +99,7 @@ public class WeChatHelper {
      * @param accessToken 微信访问令牌
      * @return URL
      */
-    public static String buildGetUserInfoUrl(String openId, String accessToken) {
+    private String buildGetUserInfoUrl(String openId, String accessToken) {
         return String.format("%s?access_token=%s&openid=%s&lang=zh_CN", getUserInfoUrl, accessToken, openId);
     }
 }
