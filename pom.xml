@@ -4,7 +4,7 @@
 
     <groupId>com.insight.utils</groupId>
     <artifactId>wechat</artifactId>
-    <version>1.0.0.release</version>
+    <version>1.0.1.release</version>
     <build>
         <plugins>
             <plugin>
@@ -43,7 +43,7 @@
         <dependency>
             <groupId>com.insight</groupId>
             <artifactId>utils</artifactId>
-            <version>1.1.0.release</version>
+            <version>1.2.9.release</version>
         </dependency>
     </dependencies>
 

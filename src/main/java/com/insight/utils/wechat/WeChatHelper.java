@@ -3,6 +3,7 @@ package com.insight.utils.wechat;
 import com.insight.util.Json;
 import com.insight.util.httpClient.HttpClientUtil;
 import org.apache.commons.logging.LogFactory;
+import org.springframework.stereotype.Component;
 
 import java.util.HashMap;
 import java.util.Optional;
@@ -13,6 +14,7 @@ import java.util.Optional;
  * @date 2018/1/5.
  * @remark 微信相关帮助类
  */
+@Component
 public class WeChatHelper {
 
     /**
