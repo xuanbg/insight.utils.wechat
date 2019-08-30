@@ -28,7 +28,6 @@
     </properties>
 
     <dependencies>
-
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
@@ -43,17 +42,30 @@
         <dependency>
             <groupId>com.insight</groupId>
             <artifactId>utils</artifactId>
-            <version>1.2.9.release</version>
+            <version>1.2.20.release</version>
         </dependency>
     </dependencies>
 
+    <repositories>
+        <repository>
+            <id>local_release</id>
+            <url>http://localhost:8081/repository/maven-releases/</url>
+            <releases>
+                <enabled>true</enabled>
+            </releases>
+            <snapshots>
+                <enabled>true</enabled>
+            </snapshots>
+        </repository>
+    </repositories>
+
     <distributionManagement>
         <repository>
-            <id>release</id>
+            <id>local_release</id>
             <url>http://localhost:8081/repository/maven-releases/</url>
         </repository>
         <snapshotRepository>
-            <id>snapshot</id>
+            <id>local_snapshot</id>
             <url>http://localhost:8081/repository/maven-snapshots/</url>
         </snapshotRepository>
     </distributionManagement>

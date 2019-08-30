@@ -1,7 +1,7 @@
 package com.insight.utils.wechat;
 
 import com.insight.util.Json;
-import com.insight.util.httpClient.HttpClientUtil;
+import com.insight.util.http.HttpClientUtil;
 import org.apache.commons.logging.LogFactory;
 import org.springframework.stereotype.Component;
 
