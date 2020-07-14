@@ -1,7 +1,7 @@
 package com.insight.utils.wechat;
 
-import com.insight.util.Json;
-import com.insight.util.http.HttpClientUtil;
+import com.insight.utils.Json;
+import com.insight.utils.http.HttpClientUtil;
 import org.apache.commons.logging.LogFactory;
 import org.springframework.stereotype.Component;
 
@@ -79,7 +79,7 @@ public class WeChatHelper {
      * @return 是否合法
      */
     private Boolean checkWeChatResult(String resultJson) {
-        return Optional.ofNullable(Json.toMap(resultJson)).orElse(new HashMap(16)).containsKey("openid");
+        return Optional.ofNullable(Json.toMap(resultJson)).orElse(null).containsKey("openid");
     }
 
     /**
