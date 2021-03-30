@@ -1,6 +1,5 @@
 package com.insight.utils;
 
-import junit.framework.TestCase;
 import org.junit.Test;
 
 
@@ -9,7 +8,7 @@ import org.junit.Test;
  * @date 2018/1/5.
  * @remark
  */
-public class WeChatTest extends TestCase {
+public class WeChatTest {
 
     @Test
     public void testGetUserInfo(){

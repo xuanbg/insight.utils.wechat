@@ -5,7 +5,6 @@ import com.insight.utils.http.HttpClientUtil;
 import org.apache.commons.logging.LogFactory;
 import org.springframework.stereotype.Component;
 
-import java.util.HashMap;
 import java.util.Optional;
 
 
@@ -20,17 +19,17 @@ public class WeChatHelper {
     /**
      * 获取微信token的URL
      */
-    private static String getTokenUrl = "https://api.weixin.qq.com/sns/oauth2/access_token";
+    private static final String GET_TOKEN_URL = "https://api.weixin.qq.com/sns/oauth2/access_token";
 
     /**
      * 获取微信用户信息的URL
      */
-    private static String getUserInfoUrl = "https://api.weixin.qq.com/sns/userinfo";
+    private static final String GET_USER_INFO_URL = "https://api.weixin.qq.com/sns/userinfo";
 
     /**
      * 授权类型
      */
-    private static String grantType = "authorization_code";
+    private static final String GRANT_TYPE = "authorization_code";
 
 
     private WeChatHelper(){
@@ -91,7 +90,7 @@ public class WeChatHelper {
      * @return URL
      */
     private String buildGetTokenUrl(String code, String weChatAppId, String secret) {
-        return String.format("%s?appid=%s&secret=%s&grant_type=%s&code=%s", getTokenUrl, weChatAppId, secret, grantType, code);
+        return String.format("%s?appid=%s&secret=%s&grant_type=%s&code=%s", GET_TOKEN_URL, weChatAppId, secret, GRANT_TYPE, code);
     }
 
     /**
@@ -102,6 +101,6 @@ public class WeChatHelper {
      * @return URL
      */
     private String buildGetUserInfoUrl(String openId, String accessToken) {
-        return String.format("%s?access_token=%s&openid=%s&lang=zh_CN", getUserInfoUrl, accessToken, openId);
+        return String.format("%s?access_token=%s&openid=%s&lang=zh_CN", GET_USER_INFO_URL, accessToken, openId);
     }
 }
