@@ -5,8 +5,6 @@ import com.insight.utils.http.HttpClientUtil;
 import org.apache.commons.logging.LogFactory;
 import org.springframework.stereotype.Component;
 
-import java.util.Optional;
-
 
 /**
  * @author luwenbao
@@ -78,7 +76,7 @@ public class WeChatHelper {
      * @return 是否合法
      */
     private Boolean checkWeChatResult(String resultJson) {
-        return Optional.ofNullable(Json.toMap(resultJson)).orElse(null).containsKey("openid");
+        return Json.toMap(resultJson).containsKey("openid");
     }
 
     /**
