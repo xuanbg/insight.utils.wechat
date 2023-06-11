@@ -1,15 +1,13 @@
 package com.insight.utils.wechat;
 
-import java.io.Serializable;
+import com.insight.utils.pojo.base.BaseXo;
 
 /**
  * @author luwenbao
  * @date 2018/1/5.
  * @remark 微信access_token
  */
-public class WeChatToken implements Serializable {
-
-    private static final long serialVersionUID = -1L;
+public class WeChatToken extends BaseXo {
 
     /**
      * 授权用户唯一标识
